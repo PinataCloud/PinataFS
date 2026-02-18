@@ -1,4 +1,4 @@
-# @pinatafs/sdk
+# pinatafs-sdk
 
 TypeScript SDK for the split PinataFS architecture:
 
@@ -85,7 +85,7 @@ import {
   replaceTokenPrefixes,
   writeFile,
   readFile
-} from "@pinatafs/sdk";
+} from "pinatafs-sdk";
 
 await mintPermissionNft({
   permissionNftAddress,

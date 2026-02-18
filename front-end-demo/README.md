@@ -4,7 +4,7 @@ Vite + React + Wagmi demo for the two-contract filesystem model.
 
 The demo uses:
 
-- `@pinatafs/sdk`
+- `pinatafs-sdk`
 - `pinata` SDK
 
 ## What it can do

@@ -10,7 +10,7 @@ importers:
 
   front-end-demo:
     dependencies:
-      '@pinatafs/sdk':
+      'pinatafs-sdk':
         specifier: workspace:*
         version: link:../sdk
       '@tanstack/react-query':

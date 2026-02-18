@@ -5,7 +5,7 @@ PinataFS is a permissioned on-chain filesystem pattern for EVM chains.
 This repo contains:
 1. `PermissionNFT` (ERC-721 for permission ownership)
 2. `PinataFS` (path -> CID storage + permission checks)
-3. `@pinatafs/sdk` (deploy/admin/read/write helpers)
+3. `pinatafs-sdk` (deploy/admin/read/write helpers)
 4. `front-end-demo` (Vite + React + Wagmi demo UI)
 
 ## Workshop Goal
@@ -18,7 +18,7 @@ By the end of this workshop, participants can:
 
 ## Repo Layout
 - `smart_contract` - Solidity contracts + Foundry tests
-- `sdk` - TypeScript SDK (`@pinatafs/sdk`)
+- `sdk` - TypeScript SDK (`pinatafs-sdk`)
 - `front-end-demo` - Demo app
 
 ## Prerequisites
@@ -34,6 +34,18 @@ Install Foundry if needed:
 curl -L https://foundry.paradigm.xyz | bash
 foundryup
 ```
+
+## Get Testnet ETH (Base Sepolia)
+
+If your workshop wallet is unfunded, use Coinbase Developer Platform's faucet tools:
+
+- [Coinbase Developer Platform](https://portal.cdp.coinbase.com/)
+
+Suggested flow:
+1. Open the CDP portal and go to faucet/funding tools. This should be located under "wallets/faucet".
+2. Select `Base Sepolia`.
+3. Paste your workshop wallet address.
+4. Request testnet ETH, then confirm the balance in your wallet before deploying.
 
 ## 1) Clone And Install
 
@@ -179,7 +191,7 @@ import {
   replaceTokenPrefixes,
   writeFile,
   readFile
-} from "@pinatafs/sdk";
+} from "pinatafs-sdk";
 
 await mintPermissionNft({
   permissionNftAddress,

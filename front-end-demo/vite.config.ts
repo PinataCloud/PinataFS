@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@pinatafs/sdk": path.resolve(__dirname, "../sdk/src/index.ts")
+      "pinatafs-sdk": path.resolve(__dirname, "../sdk/src/index.ts")
     }
   }
 });

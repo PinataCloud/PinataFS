@@ -6,7 +6,7 @@
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@pinatafs/sdk": ["../sdk/src/index.ts"]
+      "pinatafs-sdk": ["../sdk/src/index.ts"]
     },
     "skipLibCheck": true,
     "moduleResolution": "Bundler",

@@ -13,7 +13,7 @@ import {
   replaceTokenPrefixes,
   validateFilePath,
   writeFile
-} from "@pinatafs/sdk";
+} from "pinatafs-sdk";
 import { getAddress, isAddress, type Address } from "viem";
 import {
   useAccount,
