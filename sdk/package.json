@@ -1,0 +1,33 @@
+{
+  "name": "@pinatafs/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "deploy:contract": "pnpm run deploy:filesystem",
+    "deploy:filesystem": "pnpm run build && node dist/cli/deploy.js",
+    "deploy:permission-nft": "pnpm run build && node dist/cli/deploy-permission-nft.js",
+    "deploy:stack": "pnpm run build && node dist/cli/deploy-stack.js"
+  },
+  "dependencies": {
+    "viem": "^2.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.8.2"
+  }
+}

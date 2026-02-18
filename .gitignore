@@ -1,0 +1,49 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+front-end-demo/.env
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript build state
+*.tsbuildinfo
+
+# App/library build outputs
+dist/
+**/dist/
+out/
+cache/
+broadcast/
+out-tsc/
+tmp/
+
+# Foundry artifacts/cache
+smart_contract/cache/
+smart_contract/out/
+smart_contract/broadcast/
+smart_contract/.forge-snapshots/
+
+# Local compiled config outputs
+front-end-demo/vite.config.js
+front-end-demo/vite.config.d.ts
+
+# Yarn PnP
+.pnp
+.pnp.js

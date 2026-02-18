@@ -1,0 +1,220 @@
+:root {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.4;
+  color: #18202b;
+  background: linear-gradient(135deg, #f5f8ff 0%, #eaf6f2 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #d7dde8;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(23, 38, 56, 0.06);
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #c9d3e3;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: auto;
+  min-width: 180px;
+  margin-right: 8px;
+  background: #1455cc;
+  color: #fff;
+  border: 1px solid #1455cc;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.checkbox-row input {
+  width: auto;
+}
+
+.result-block {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #eff5ff;
+  border: 1px solid #d5e5ff;
+}
+
+.warning-text {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff7e8;
+  border: 1px solid #f3d7a8;
+}
+
+.rules-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.rules-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #1f334d;
+}
+
+.rules-list li {
+  margin-bottom: 8px;
+}
+
+.rules-list li:last-child {
+  margin-bottom: 0;
+}
+
+.rules-list code {
+  background: #eef4ff;
+  border: 1px solid #d6e4ff;
+  border-radius: 6px;
+  padding: 0 4px;
+}
+
+.helper-text {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #405468;
+}
+
+.token-grid {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.token-card {
+  border: 1px solid #d6dfed;
+  border-radius: 10px;
+  padding: 12px;
+  background: #f8fbff;
+}
+
+.token-card.selected {
+  border-color: #1455cc;
+  box-shadow: inset 0 0 0 1px #1455cc;
+  background: #eef5ff;
+}
+
+.token-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.token-card p {
+  margin: 0 0 6px;
+}
+
+.prefix-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.prefix-list li {
+  margin-bottom: 4px;
+}
+
+.prefix-list code {
+  background: #eef4ff;
+  border: 1px solid #d6e4ff;
+  border-radius: 6px;
+  padding: 0 4px;
+}
+
+.token-select-button {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.error-text {
+  color: #b42318;
+  margin: 8px 0;
+}
+
+.status-text {
+  margin: 8px 0;
+  color: #1741a6;
+  word-break: break-word;
+}
+
+a {
+  color: #1455cc;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 20px 14px 44px;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 0;
+  }
+}

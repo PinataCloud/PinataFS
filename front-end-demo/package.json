@@ -1,0 +1,28 @@
+{
+  "name": "front-end-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.64.2",
+    "@pinatafs/sdk": "workspace:*",
+    "pinata": "^2.4.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "viem": "^2.39.0",
+    "wagmi": "^2.16.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "^5.8.2",
+    "vite": "^6.1.0"
+  }
+}
