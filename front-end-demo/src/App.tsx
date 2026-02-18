@@ -53,6 +53,8 @@ function isUnsignedInteger(value: string): boolean {
 interface DemoTokenEntry {
   tokenId: bigint;
   owner: Address;
+  prefixes: string[];
+  prefixLoadError?: string;
 }
 
 export default function App() {
@@ -404,9 +406,30 @@ export default function App() {
               args: [tokenId]
             });
 
+            let prefixes: string[] = [];
+            let prefixLoadError: string | undefined;
+
+            if (filesystemAddress) {
+              try {
+                prefixes = await getTokenPrefixes({
+                  filesystemAddress,
+                  publicClient,
+                  nftContract: permissionNftAddress,
+                  tokenId
+                });
+              } catch (error) {
+                prefixLoadError =
+                  error instanceof Error
+                    ? error.message
+                    : "Failed to load filesystem prefixes for this token.";
+              }
+            }
+
             return {
               tokenId,
-              owner: getAddress(owner as Address)
+              owner: getAddress(owner as Address),
+              prefixes,
+              prefixLoadError
             } as DemoTokenEntry;
           } catch {
             return null;
@@ -420,7 +443,11 @@ export default function App() {
       if (tokens.length === 0) {
         setDemoTokenStatus("No minted tokens found in ids 1-10.");
       } else {
-        setDemoTokenStatus(`Found ${tokens.length} token${tokens.length === 1 ? "" : "s"} in ids 1-10.`);
+        setDemoTokenStatus(
+          filesystemAddress
+            ? `Found ${tokens.length} token${tokens.length === 1 ? "" : "s"} in ids 1-10. Permissions loaded for each token.`
+            : `Found ${tokens.length} token${tokens.length === 1 ? "" : "s"} in ids 1-10. Set VITE_FILESYSTEM_ADDRESS to load permissions in cards.`
+        );
       }
     } catch (error) {
       setDemoTokens([]);
@@ -807,6 +834,20 @@ export default function App() {
                 <p>
                   Owner: <code>{token.owner}</code>
                 </p>
+                <p>Permissions:</p>
+                {token.prefixLoadError ? (
+                  <p className="error-text">{token.prefixLoadError}</p>
+                ) : token.prefixes.length > 0 ? (
+                  <ul className="prefix-list">
+                    {token.prefixes.map((prefix) => (
+                      <li key={`demo-token-prefix-${token.tokenId.toString()}-${prefix}`}>
+                        <code>{prefix}</code>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="helper-text">No active filesystem prefixes for this token.</p>
+                )}
                 <button
                   type="button"
                   className="token-select-button"
