@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "build": "pnpm --filter ./sdk build && pnpm --filter ./front-end-demo build",
-    "dev": "pnpm --filter ./front-end-demo dev",
-    "build:sdk": "pnpm --filter ./sdk build",
+    "build": "pnpm --filter ./TypeScript/SDK build && pnpm --filter ./TypeScript/demo build",
+    "dev": "pnpm --filter ./TypeScript/demo dev",
+    "build:sdk": "pnpm --filter ./TypeScript/SDK build",
     "build:contracts": "cd smart_contract && forge build --skip test",
     "test:contracts": "cd smart_contract && forge test --offline",
-    "deploy:filesystem": "pnpm --filter ./sdk deploy:filesystem",
-    "deploy:permission-nft": "pnpm --filter ./sdk deploy:permission-nft",
-    "deploy:stack": "pnpm --filter ./sdk deploy:stack"
+    "deploy:filesystem": "pnpm --filter ./TypeScript/SDK deploy:filesystem",
+    "deploy:permission-nft": "pnpm --filter ./TypeScript/SDK deploy:permission-nft",
+    "deploy:stack": "pnpm --filter ./TypeScript/SDK deploy:stack"
   }
 }

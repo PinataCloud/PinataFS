@@ -10,7 +10,7 @@
 .env
 .env.*
 !.env.example
-front-end-demo/.env
+TypeScript/demo/.env
 
 # Dependencies
 node_modules/
@@ -41,8 +41,8 @@ smart_contract/broadcast/
 smart_contract/.forge-snapshots/
 
 # Local compiled config outputs
-front-end-demo/vite.config.js
-front-end-demo/vite.config.d.ts
+TypeScript/demo/vite.config.js
+TypeScript/demo/vite.config.d.ts
 
 # Yarn PnP
 .pnp
