@@ -2,6 +2,8 @@
 
 Vite + React + Wagmi demo for PinataFS.
 
+`PermissionNFT` is used here as a demo ERC-721. PinataFS itself can use any ERC-721 collection for write permissions.
+
 ## What it demonstrates
 
 - Connect wallet
@@ -25,7 +27,7 @@ Key values:
 - `VITE_RPC_URL`
 - `VITE_CHAIN_ID`
 - `VITE_FILESYSTEM_ADDRESS`
-- `VITE_PERMISSION_NFT_ADDRESS`
+- `VITE_PERMISSION_NFT_ADDRESS` (demo collection address; external ERC-721 addresses can still be used in write/admin forms)
 - `VITE_PINATA_JWT`
 - `VITE_PINATA_GATEWAY`
 

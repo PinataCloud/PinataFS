@@ -23,6 +23,10 @@ Two-contract model:
 1. `PermissionNFT` (`smart_contract/contracts/PermissionNFT.sol`)
 2. `PinataFS` (`smart_contract/contracts/PinataFS.sol`)
 
+Important:
+- `PermissionNFT` is a reference/example ERC-721 for workshops and quick starts.
+- `PinataFS` is not coupled to `PermissionNFT`; it works with any ERC-721 contract that exposes `ownerOf(uint256)`.
+
 Write permission is keyed by `(nftContract, tokenId)`:
 - Admin assigns writable prefixes to that key.
 - Any current owner of that NFT may write to matching paths.
@@ -122,6 +126,12 @@ Deploy both contracts:
 
 ```bash
 pnpm deploy:stack
+```
+
+If you already have an external NFT collection, you can skip deploying `PermissionNFT` and deploy only the filesystem:
+
+```bash
+pnpm deploy:filesystem
 ```
 
 ## Demo App

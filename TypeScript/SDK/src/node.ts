@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -67,7 +68,24 @@ function resolveWriteAccount(walletClient: WalletClient, account?: Address | Acc
 function resolveDefaultArtifactPath(relativePath: string): string {
   const currentFilePath = fileURLToPath(import.meta.url);
   const currentDir = path.dirname(currentFilePath);
-  return path.resolve(currentDir, `../../smart_contract/out/${relativePath}`);
+  const searchRoots = [
+    currentDir,
+    path.resolve(currentDir, ".."),
+    path.resolve(currentDir, "../.."),
+    path.resolve(currentDir, "../../..")
+  ];
+
+  for (const searchRoot of searchRoots) {
+    const candidateOutDir = path.resolve(searchRoot, "smart_contract/out");
+    if (existsSync(candidateOutDir)) {
+      return path.resolve(candidateOutDir, relativePath);
+    }
+  }
+
+  throw new Error(
+    `Could not locate Foundry artifacts under smart_contract/out relative to ${currentDir}. ` +
+      "Set FILESYSTEM_FOUNDRY_ARTIFACT_PATH or PERMISSION_NFT_FOUNDRY_ARTIFACT_PATH explicitly."
+  );
 }
 
 function resolveDefaultFilesystemArtifactPath(): string {

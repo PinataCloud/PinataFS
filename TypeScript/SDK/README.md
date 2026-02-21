@@ -4,12 +4,18 @@ TypeScript SDK for PinataFS.
 
 ## Features
 
-- Deploy `PermissionNFT`, `PinataFS`, or both
-- Mint permission NFTs
+- Deploy example `PermissionNFT`, `PinataFS`, or both
+- Mint example permission NFTs
 - Replace all prefixes for `(nftContract, tokenId)` in one transaction
 - Write file CIDs using explicit NFT contract + token ID
 - Read CIDs by path
 - Validate paths/prefixes with the same rules as the contract
+
+## Important
+
+- `PermissionNFT` in this repo is only a reference/example ERC-721.
+- `PinataFS` works with any ERC-721 collection that implements `ownerOf(uint256)`.
+- You can use external NFT contracts for permissions without deploying `PermissionNFT`.
 
 ## Build
 
